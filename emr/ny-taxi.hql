@@ -29,3 +29,23 @@ LOCATION "${INPUT}";
 INSERT OVERWRITE DIRECTORY "${OUTPUT}"
 SELECT * FROM ny_taxi WHERE rate_code_id = 1;
 
+
+-- EMR Scaling test
+CREATE EXTERNAL TABLE Customer (
+c_custkey int,
+c_name string,
+c_address string,
+c_nationkey int,
+c_phone string,
+c_acctbal double,
+c_mktsegment string,
+c_comment string
+)
+ROW FORMAT SERDE
+'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+STORED AS INPUTFORMAT
+'org.apache.hadoop.mapred.TextInputFormat'
+OUTPUTFORMAT
+'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+'s3://emr-workshops-us-west-2/athena_federation_workshop/data/s10/customer';
