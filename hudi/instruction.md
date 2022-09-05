@@ -13,7 +13,7 @@ This log is then merged with the existing Parquet file using a compactor during 
 - _hoodie_commit_time string - timestamp
 - _hoodie_commit_seqno string - timestamp_n_m where n = 0,1,2,....  m = 1,2,3,....
 - _hoodie_record_key string - primary key - ex trip_id
-- _hoodie_partition_path string
+- _hoodie_partition_path string - routeid, tstamp
 - _hoodie_file_name string - parquet file name
 
 
