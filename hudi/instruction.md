@@ -17,4 +17,5 @@ This log is then merged with the existing Parquet file using a compactor during 
 - _hoodie_file_name string - parquet file name
 
 
-
+### Reference
+https://hudi.apache.org/docs/quick-start-guide
